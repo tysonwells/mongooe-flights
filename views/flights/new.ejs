@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Enter a flight</h1>
+<form action="/flights" method="POST">
+<label>Airline:
+   <select name="airline">
+     <option value="American">American</option>
+     <option value="Southwest">Southwest</option>
+     <option value="United">United</option>
+   </select> 
+   <!-- <input type="text" name="title"> -->
+  </label><br>
+<label>Airport:
+   <select name="Airport">
+     <option value="AUS">AUS</option>
+     <option value="DFW">DEN</option>
+     <option value="lAX">United</option>
+     <option value="SAN">United</option>
+    </select> 
+   <!-- <input type="text" name="title"> -->
+  </label><br>
+  <label>Flight Number:
+    <input type="text" name="fligh">
+  </label><br>
+  <label for="departure-time">Departure Time:
+    <input type="datetime-local" id='departure-time'>
+  </label><br>
+   <button type="submit">Add Flight</button>
+</form>
+
+</body>
+</html>
+
+
+  <!-- <label for='departure-time'><Departure:</lable>
+    <input type="text" name="releaseYear">
+  </label><br>
+</label><br>
+<form action="/movies" method="POST">
+<button type="submit">Add Movie</button> -->
+<!-- </label><br>
+</form> -->
