@@ -6,6 +6,8 @@ import { fileURLToPath } from 'url'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 
+
+
 //connect to the db using Mongoose
 import('./config/database.js')
 
