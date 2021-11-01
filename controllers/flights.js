@@ -28,7 +28,7 @@ function create(req, res) {
 
 function index(req, res) {
   Flight.find({}, function (error, flights) {
-    res.render('flights/index', {
+      res.render('flights/index', {
       flights,
       error,
       title: 'All Flights'     
