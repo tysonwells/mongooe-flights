@@ -14,11 +14,8 @@ const flightSchema = new Schema ({
     type: String,
     enum: ['American', 'Southwest', 'United']
   },
-  airport: {
-    type: String,
-    enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
-    default: 'DEN'
-  },
+
+  
   flightNo: {
     type: Number,
     required: true
@@ -41,3 +38,4 @@ export {
   Flight,
   // Ticket,
 }
+
