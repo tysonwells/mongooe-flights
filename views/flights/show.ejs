@@ -12,6 +12,19 @@
   <section>
     <div> Departs: <%= flight.departs %> </div>
   </section>
+  <section>
+    <div>Destination:</div>
+  <ul>
+    <%- flight.dest.map(d => `<li>${d.airport}</li>`).join('') %>
+  </ul>
+  </section>
+  <form id="add-dest-to-destination" action="???" method="POST">
+    <select name="destinationId">
+      <%- destinations.map(d => `<option value="${d._id}">${d.airport}</option>`).join('') %>
+    </select>
+    <button type="submit">Add to Destination</button>
+  </form>
+
   <h2>Tickets</h2>
   <form 
     id="add-ticket-form"
@@ -30,7 +43,6 @@
     <table>
       <thead>
         <tr>
-          <th>Date</th>
           <th>Seat</th>
           <th>Price</th>
         </tr>
@@ -38,7 +50,6 @@
       <tbody>
         <% flight.tickets.forEach(function(ticket) { %>
           <tr>
-            
             <td><%= ticket.seat %></td>
             <td><%= ticket.price %></td>
           </tr>

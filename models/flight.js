@@ -4,7 +4,8 @@ const Schema = mongoose.Schema
 // Tickets schema
 const ticketSchema = new Schema ({
   seat: {type: String, match: /[A-F][1-9]\d?/},
-  price: {type: Number,},  
+  price: {type: Number,},
+  date: {type: Date}  
   }, {
     timestamps: true
   })
@@ -14,7 +15,12 @@ const flightSchema = new Schema ({
     type: String,
     enum: ['American', 'Southwest', 'United']
   },
-
+  airport: {
+    type: String,
+    enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
+    default: 'DEN'
+  },
+  
   
   flightNo: {
     type: Number,
@@ -25,7 +31,7 @@ const flightSchema = new Schema ({
     default: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
   },  
   tickets: [ticketSchema],
-  destinations: [{ type: mongoose.ObjectId, ref: 'Destination' }]
+  dest: [{ type: Schema.Types.ObjectId, ref: 'Destination'}]
 }, {
   timestamps: true
 })
