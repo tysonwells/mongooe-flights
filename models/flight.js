@@ -26,17 +26,18 @@ const flightSchema = new Schema ({
   departs: {
     type: Date,
     default: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
-  },
-  tickets: [ticketSchema]
+  },  
+  tickets: [ticketSchema],
+  destinations: [{ type: mongoose.ObjectId, ref: 'Destination' }]
 }, {
   timestamps: true
 })
 // flight property
 const Flight = mongoose.model('Flight', flightSchema)
 // ticket property
-const Ticket = mongoose.model('Ticket', ticketSchema)
+// const Ticket = mongoose.model('Ticket', ticketSchema)
 // Exporting the properties/models
 export {
   Flight,
-  Ticket,
+  // Ticket,
 }

@@ -14,6 +14,7 @@ import('./config/database.js')
 // import routers
 import { router as indexRouter } from './routes/index.js'
 import { router as flightsRouter } from './routes/flights.js'
+import { router as destinationsRouter } from './routes/destintions.js'
 
 // set up app
 const app = express()
@@ -39,6 +40,7 @@ app.use(
 // mounted routers
 app.use('/', indexRouter)
 app.use('/flights', flightsRouter)
+app.use('/destinations', destinationsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
