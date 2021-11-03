@@ -40,11 +40,11 @@ function show(req, res) {
   Flight.findById(req.params.id)
   .populate('dest')
   .exec(function(err, flight) {
-    Destination.find({_id: {$nin: flight.dest}}, function(err, destinations) {
+    Destination.find({_id: {$nin: flight.dest}}, function(err, destinationsNotInFlight) {
       res.render('flights/show', {
         title: 'Flight Detail', 
         flight: flight,
-        destinations: destinations,
+        destinationsNotInFlight
       })
     })
   })
@@ -72,7 +72,7 @@ function createTicket(req, res) {
 
 function addToDestination(req, res) {
   Flight.findById(req.params.id, function(err, flight) {
-    flight.dest.push(req.body.performerId)
+    flight.dest.push(req.body.destinationId)
     flight.save(function(err) {
       res.redirect(`/flights/${flight._id}`)
     })
